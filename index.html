@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Elie NDORIMANA - CV</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts: Roboto and Lato -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #eef2f0;
+            font-family: 'Lato', sans-serif;
+            color: #2E2E2E;
+            line-height: 1.5;
+            padding: 40px 20px;
+        }
+
+        /* Main container with max width and shadow */
+        .cv-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        /* Two-column layout */
+        .cv-inner {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .left-column {
+            flex: 1;
+            background: #fff;
+            padding: 30px 25px;
+            border-right: 1px solid #e0e0e0;
+        }
+        .right-column {
+            flex: 1;
+            background: #fff;
+            padding: 30px 25px;
+        }
+
+        /* Header area */
+        .cv-header {
+            background: white;
+            padding: 30px 30px 20px 30px;
+            border-bottom: 2px solid #E7D192;
+        }
+        .name {
+            font-family: 'Roboto Slab', serif;
+            font-size: 42px;
+            font-weight: bold;
+            color: #1B5E20;
+            margin-bottom: 5px;
+        }
+        .tagline {
+            font-size: 18px;
+            color: #4CAF50;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        .personal-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 14px;
+            color: #666;
+            margin-top: 10px;
+        }
+        .personal-info i {
+            width: 24px;
+            color: #4CAF50;
+        }
+        .photo {
+            float: right;
+            margin-left: 20px;
+            margin-bottom: 10px;
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #E7D192;
+        }
+
+        /* Section styling */
+        .cv-section {
+            margin-bottom: 28px;
+            break-inside: avoid;
+        }
+        .section-title {
+            font-family: 'Roboto Slab', serif;
+            font-size: 22px;
+            font-weight: bold;
+            color: #1B5E20;
+            border-left: 5px solid #E7D192;
+            padding-left: 12px;
+            margin-bottom: 15px;
+            margin-top: 5px;
+        }
+        .subsection-title {
+            font-weight: 700;
+            font-size: 17px;
+            color: #1B5E20;
+            margin-bottom: 3px;
+        }
+        .event-date {
+            font-size: 13px;
+            color: #4CAF50;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+        .event-location {
+            font-size: 13px;
+            color: #888;
+            margin-bottom: 8px;
+        }
+        .event-desc {
+            margin-top: 6px;
+            padding-left: 18px;
+        }
+        .event-desc ul {
+            padding-left: 20px;
+            margin-top: 5px;
+        }
+        .event-desc li {
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+        .divider {
+            height: 1px;
+            background: #e0e0e0;
+            margin: 16px 0;
+        }
+        .cv-tag {
+            display: inline-block;
+            background: #eef2f0;
+            color: #2E2E2E;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin: 0 6px 8px 0;
+            font-weight: 500;
+        }
+        .cv-skill {
+            margin-bottom: 12px;
+        }
+        .skill-name {
+            font-weight: 600;
+            width: 120px;
+            display: inline-block;
+            font-size: 14px;
+        }
+        .skill-bar {
+            display: inline-block;
+            width: calc(100% - 130px);
+            background: #e0e0e0;
+            border-radius: 10px;
+            height: 8px;
+            vertical-align: middle;
+        }
+        .skill-level {
+            background: #4CAF50;
+            border-radius: 10px;
+            height: 8px;
+            width: 0%;
+        }
+        .achievement {
+            margin-bottom: 14px;
+        }
+        .achievement i {
+            width: 28px;
+            color: #4CAF50;
+            font-size: 18px;
+        }
+        .achievement-text {
+            display: inline-block;
+            width: calc(100% - 32px);
+            vertical-align: top;
+            font-size: 14px;
+        }
+        .reference {
+            margin-bottom: 18px;
+        }
+        .reference-name {
+            font-weight: 700;
+            font-size: 15px;
+            color: #1B5E20;
+        }
+        .reference-title {
+            font-size: 13px;
+            color: #666;
+        }
+        .reference-contact {
+            font-size: 12px;
+            color: #888;
+            margin-top: 4px;
+        }
+        .quote {
+            font-style: italic;
+            background: #f9fafb;
+            padding: 12px 16px;
+            border-radius: 12px;
+            border-left: 4px solid #4CAF50;
+            font-size: 15px;
+            color: #2c3e2f;
+            margin: 15px 0;
+        }
+        @media (max-width: 800px) {
+            .cv-inner {
+                flex-direction: column;
+            }
+            .left-column {
+                border-right: none;
+            }
+            .photo {
+                float: none;
+                display: block;
+                margin: 0 auto 20px auto;
+            }
+            .name {
+                text-align: center;
+            }
+            .tagline {
+                text-align: center;
+            }
+            .personal-info {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="cv-container">
+    <!-- Header with Photo -->
+    <div class="cv-header">
+        <!-- Placeholder for photo: you can replace elie.png with actual URL or base64 image -->
+        <img class="photo" src="N.Elie.png" alt="Elie NDORIMANA" style="background:#e0e7e0;">
+        <div class="name">Elie NDORIMANA</div>
+        <div class="tagline">Master's Student in Data Science | AIMS Rwanda</div>
+        <div class="personal-info">
+            <span><i class="fas fa-envelope"></i> eliendorimana21@gmail.com</span>
+            <span><i class="fas fa-phone-alt"></i> +250 787 988 504</span>
+            <span><i class="fas fa-map-marker-alt"></i> Kigali, Rwanda</span>
+            <span><i class="fab fa-github"></i> eliendorimana-ne</span>
+            <span><i class="fab fa-linkedin"></i> ndorimana-elie-377240271</span>
+        </div>
+    </div>
+
+    <div class="cv-inner">
+        <!-- LEFT COLUMN -->
+        <div class="left-column">
+            <!-- Profile -->
+            <div class="cv-section">
+                <div class="section-title">Profile</div>
+                <p style="font-size: 14px; color: #444;">Master’s student in Data Science with strong analytical and problem-solving skills. Experienced student leader with a proven record of teamwork, initiative, and impact. Passionate about leveraging data to drive solutions for economic and environmental challenges.</p>
+            </div>
+
+            <!-- Education -->
+            <div class="cv-section">
+                <div class="section-title">Education</div>
+                <div class="subsection-title">Master's in Data Science</div>
+                <div class="event-date">2025 – Present</div>
+                <div class="event-location">African Institute for Mathematical Sciences (AIMS Rwanda), Kigali</div>
+                <div class="event-desc"><ul><li>Focus on Data Science, Machine Learning, and Dynamical Systems.</li><li>Applying advanced mathematical modeling to real-world problems.</li></ul></div>
+                <div class="divider"></div>
+                <div class="subsection-title">Bachelor of Science in Applied Mathematics</div>
+                <div class="event-date">Completed in 2024</div>
+                <div class="event-location">University of Rwanda, College of Science and Technology, Kigali</div>
+                <div class="event-desc"><ul><li>Specialization: Applied Mathematics.</li><li>Final Year Project: <em>Mathematical Modelling of COVID-19 in Rwanda.</em></li></ul></div>
+            </div>
+
+            <!-- Experience -->
+            <div class="cv-section">
+                <div class="section-title">Experience</div>
+                <div class="subsection-title">Teacher of Physics</div>
+                <div class="event-date">2024 – Present</div>
+                <div class="event-location">Totuum Tuum Company Ltd, Kigali, Rwanda</div>
+                <div class="event-desc"><ul><li>Mentoring young students in physics concepts and problem-solving techniques</li><li>Developing engaging lesson plans and practical demonstrations</li><li>Fostering scientific curiosity and analytical thinking in students</li></ul></div>
+                <div class="divider"></div>
+
+                <div class="subsection-title">Mathematical Olympiad Coach</div>
+                <div class="event-date">2025 – Present</div>
+                <div class="event-location">AIMS Rwanda, Kigali</div>
+                <div class="event-desc"><ul><li>Coaching students in advanced problem-solving and mathematical reasoning.</li></ul></div>
+                <div class="divider"></div>
+
+                <div class="subsection-title">Data Analyst Intern</div>
+                <div class="event-date">Jul 2024 – Aug 2024</div>
+                <div class="event-location">Rwanda Social Security Board (RSSB), Kigali</div>
+                <div class="event-desc"><ul><li>Built interactive dashboards using Power BI.</li><li>Conducted data cleaning and visualization for planning and monitoring.</li></ul></div>
+                <div class="divider"></div>
+
+                <div class="subsection-title">President</div>
+                <div class="event-date">2023 – 2024</div>
+                <div class="event-location">AJEMEL, University of Rwanda, Kigali</div>
+                <div class="event-desc"><ul><li>Promoted entrepreneurship, leadership, and mentorship initiatives among students.</li></ul></div>
+                <div class="divider"></div>
+
+                <div class="subsection-title">Head of Students</div>
+                <div class="event-date">2023 – 2024</div>
+                <div class="event-location">Department of Mathematics, University of Rwanda, Kigali</div>
+                <div class="event-desc"><ul><li>Led academic and extracurricular activities for the Mathematics department.</li></ul></div>
+            </div>
+        </div>
+
+        <!-- RIGHT COLUMN -->
+        <div class="right-column">
+            <!-- Personal Philosophy -->
+            <div class="cv-section">
+                <div class="section-title">Personal Philosophy</div>
+                <div class="quote">“Mathematics and data are not just tools, they are languages for understanding and shaping our world.”</div>
+            </div>
+
+            <!-- Strengths (tags) -->
+            <div class="cv-section">
+                <div class="section-title">Strengths</div>
+                <div>
+                    <span class="cv-tag">Analytical Thinking</span> <span class="cv-tag">Problem Solving</span> <span class="cv-tag">Hard-working</span>
+                    <span class="cv-tag">Eye for detail</span> <span class="cv-tag">Leadership</span> <span class="cv-tag">Communication</span>
+                    <span class="cv-tag">Adaptability</span> <span class="cv-tag">Teamwork</span>
+                </div>
+            </div>
+
+            <!-- Skills -->
+            <div class="cv-section">
+                <div class="section-title">Skills</div>
+                <div>
+                    <span class="cv-tag">Python</span> <span class="cv-tag">R</span> <span class="cv-tag">LaTeX</span>
+                    <span class="cv-tag">Linux</span> <span class="cv-tag">Power BI</span> <span class="cv-tag">Jupyter Notebook</span>
+                    <span class="cv-tag">Microsoft Office</span> <span class="cv-tag">Julia</span>
+                </div>
+            </div>
+
+            <!-- Languages with visual rating -->
+            <div class="cv-section">
+                <div class="section-title">Languages</div>
+                <div class="cv-skill"><span class="skill-name">English</span><div class="skill-bar"><div class="skill-level" style="width:100%"></div></div></div>
+                <div class="cv-skill"><span class="skill-name">Kinyarwanda</span><div class="skill-bar"><div class="skill-level" style="width:100%"></div></div></div>
+                <div class="cv-skill"><span class="skill-name">Swahili</span><div class="skill-bar"><div class="skill-level" style="width:60%"></div></div></div>
+            </div>
+
+            <!-- Leadership & Activities -->
+            <div class="cv-section">
+                <div class="section-title">Leadership & Activities</div>
+                <div class="achievement"><i class="fas fa-users"></i><div class="achievement-text"><strong>President, AJEMEL</strong> — Promoted leadership and mentorship programs.</div></div>
+                <div class="achievement"><i class="fas fa-graduation-cap"></i><div class="achievement-text"><strong>Head of Students</strong> — Led academic excellence initiatives in the Department of Mathematics.</div></div>
+                <div class="achievement"><i class="fas fa-handshake"></i><div class="achievement-text"><strong>General Secretary, UNION</strong> — Enhanced student engagement and coordination.</div></div>
+            </div>
+
+            <!-- Projects -->
+            <div class="cv-section">
+                <div class="section-title">Projects</div>
+                <div class="subsection-title">Application of Dynamical System and Chaos Theory in Economics</div>
+                <div class="event-date">2025</div>
+                <div class="event-desc"><ul><li>Modeled nonlinear behavior in economic systems.</li><li>Analyzed stability, bifurcation, and chaotic phenomena.</li></ul></div>
+                <div class="divider"></div>
+                <div class="subsection-title">Mathematical Modelling of COVID-19 in Rwanda</div>
+                <div class="event-date">2024</div>
+                <div class="event-desc"><ul><li>Developed SEIRD models for epidemic analysis.</li><li>Conducted parameter estimation using real-world data.</li></ul></div>
+            </div>
+
+            <!-- References -->
+            <div class="cv-section">
+                <div class="section-title">References</div>
+                <div class="reference"><div class="reference-name">Dr. Celestin Kurujyibwami</div><div class="reference-title">Lecturer, University of Rwanda</div><div class="reference-contact">celeku@yahoo.fr | +250 782 082 080</div></div>
+                <div class="reference"><div class="reference-name">Dr. Emelyne Gasana Umunoza</div><div class="reference-title">DVC, Kepler College</div><div class="reference-contact">emygsana@gmail.com | +250 788 896 323</div></div>
+                <div class="reference"><div class="reference-name">Prof. Joseph NZABANITA</div><div class="reference-title">Sinior Lecturer, University of Rwanda</div><div class="reference-contact">j.nzabanita@ur.ac.rw |+250 788 477 786</div></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
